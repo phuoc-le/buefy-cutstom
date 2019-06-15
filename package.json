@@ -1,9 +1,9 @@
 {
   "name": "buefy-custom",
-  "version": "1.0",
-  "homepage": "https://buefy.org",
+  "version": "0.7.7",
+  "homepage": "https://phuocle.me",
   "description": "Lightweight UI components for Vue.js based on Bulma",
-  "author": "Rafael Beraldo <rafael.pimpa@gmail.com>",
+  "author": "Phuoc Le <huuphuoc2791@gmail.com>",
   "maintainers": [
     "Phuoc Le <huuphuoc2791@gmail.com>"
   ],
@@ -18,10 +18,10 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/buefy/buefy.git"
+    "url": "https://github.com/huuphuoc2791/buefy-cutstom.git"
   },
   "bugs": {
-    "url": "https://github.com/buefy/buefy/issues"
+    "url": "https://github.com/huuphuoc2791/buefy-cutstom/buefy-custom/issues"
   },
   "scripts": {
     "dev": "node build/dev-server.js",

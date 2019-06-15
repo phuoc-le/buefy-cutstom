@@ -11,13 +11,7 @@
     <a href="https://buefy.org"><img src="https://img.shields.io/badge/code_style-buefy-7957d5.svg?style=flat-square" /></a>
 </p>
 
-> Buefy is a lightweight library of responsive UI components for [Vue.js](https://vuejs.org/) based on [Bulma](http://bulma.io/) framework and design.
-
-## Sponsors
-
-<a href="https://www.talent-pool.com" target="_blank">
-  <img src="https://raw.githubusercontent.com/buefy/buefy/master/docs/assets/sponsors/twago.png" height="40px" />
-</a>
+> Buefy Custom is customed from Buefy
 
 ## Features
 
@@ -42,7 +36,7 @@ You need [Vue.js](https://vuejs.org/) **version 2.5+**.
 ### 1 Install via npm
 
 ```bash
-npm install buefy
+npm install buefy-custom
 ```
 
 ### 2 Import and use Buefy
@@ -50,8 +44,8 @@ npm install buefy
 Bundle
 ```javascript
 import Vue from 'vue';
-import Buefy from 'buefy';
-import 'buefy/dist/buefy.css';
+import Buefy from 'buefy-custom';
+import 'buefy-custom/dist/buefy.css';
 
 Vue.use(Buefy);
 
@@ -60,8 +54,8 @@ or Individual Components
 ```javascript
 
 import Vue from 'vue'
-import { Field, Input } from 'buefy/dist/components'
-import 'buefy/dist/buefy.css'
+import { Field, Input } from 'buefy-custom/dist/components'
+import 'buefy-custom/dist/buefy.css'
 
 Vue.use(Field)
 Vue.use(Input)
@@ -69,9 +63,9 @@ Vue.use(Input)
 or
 
 import Vue from 'vue'
-import Field from 'buefy/dist/components/field'
-import Input from 'buefy/dist/components/input'
-import 'buefy/dist/buefy.css'
+import Field from 'buefy-custom/dist/components/field'
+import Input from 'buefy-custom/dist/components/input'
+import 'buefy-custom/dist/buefy.css'
 
 Vue.use(Field)
 Vue.use(Input)

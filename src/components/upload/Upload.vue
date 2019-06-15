@@ -28,12 +28,15 @@
             :accept="accept"
             :disabled="disabled"
             @change="onFileChange">
+        <div v-if="isPreview&&(imageData.length > 0)" class="image-preview">
+            <img class="preview" :src="imageData">
+        </div>
     </label>
 </template>
 
 <script>
     import FormElementMixin from '../../utils/FormElementMixin'
-    import { File } from '../../utils/ssr'
+    import {File} from '../../utils/ssr'
 
     export default {
         name: 'BUpload',
@@ -54,13 +57,18 @@
             native: {
                 type: Boolean,
                 default: false
+            },
+            isPreview: {
+                type: Boolean,
+                default: false
             }
         },
         data() {
             return {
                 newValue: this.value,
                 dragDropFocus: false,
-                _elementRef: 'input'
+                _elementRef: 'input',
+                imageData: ''
             }
         },
         watch: {
@@ -98,9 +106,17 @@
                     this.newValue = null
                 } else if (!this.multiple) {
                     // only one element in case drag drop mode and isn't multiple
-                    if (this.dragDrop && value.length !== 1) return
-                    else {
+                    if (this.dragDrop && value.length !== 1) {
+                        return
+                    } else {
                         const file = value[0]
+                        var reader = new FileReader()
+
+                        reader.onload = (e) => {
+                            this.imageData = e.target.result
+                        }
+                        // Start the reader job - read file as a data url (base64 format)
+                        reader.readAsDataURL(file)
                         if (this.checkType(file)) {
                             this.newValue = file
                         } else if (this.newValue) {
@@ -128,6 +144,7 @@
                     }
                 }
                 this.$emit('input', this.newValue)
+                this.$emit('image_url', this.imageData)
                 !this.dragDrop && this.checkHtml5Validity()
             },
 
